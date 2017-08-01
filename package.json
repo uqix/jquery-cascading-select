@@ -1,0 +1,30 @@
+{
+  "name": "jquery-cascading-select",
+  "version": "1.0.0",
+  "description": "Unlimited level cascading select",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zenkiezhu/jquery-cascading-select.git"
+  },
+  "keywords": [
+    "jquery-plugin",
+    "unlimited-level",
+    "multi-level",
+    "cascading",
+    "select"
+  ],
+  "author": "Zenkie Zhu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zenkiezhu/jquery-cascading-select/issues"
+  },
+  "homepage": "https://github.com/zenkiezhu/jquery-cascading-select#readme"
+}
