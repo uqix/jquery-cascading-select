@@ -4,10 +4,29 @@
   </head>
 
   <body>
-    <form onsubmit="return false;">
+    <h2>Demo 1 - Basic</h2>
+    <form name="demo1" onsubmit="return false;">
       L1 <select id="s1"></select>
       L2 <select id="s2"></select>
       L3 <select id="s3"></select>
+    </form>
+
+    <h2>Demo 2 - Pre-selected</h2>
+    <form name="demo2" onsubmit="return false;">
+      L1
+      <select id="s4">
+        <option>3</option>
+      </select>
+
+      L2
+      <select id="s5">
+        <option>3.2</option>
+      </select>
+
+      L3
+      <select id="s6">
+        <option>3.2.2</option>
+      </select>
     </form>
 
     <script
@@ -57,6 +76,11 @@
 
        $('#s1').cascadingSelect({
          subSelects: ['#s2', '#s3'],
+         data: data
+       });
+
+       $('#s4').cascadingSelect({
+         subSelects: ['#s5', '#s6'],
          data: data
        });
      })();

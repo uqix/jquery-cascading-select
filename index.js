@@ -44,7 +44,36 @@
         change();
     });
 
-    return this.append(genOptions(_data)).change();
+    init.call(this);
+
+    return this;
+
+    function init() {
+      if (this.val() === null) {
+        this.
+          empty().
+          append(genOptions(_data)).
+          change();
+      } else {
+        preselect();
+      }
+    }
+
+    function preselect() {
+      $(_selects).each(function(i) {
+        var s = $(this);
+        var v = s.val();
+
+        if (v === null) {
+          return false;
+        }
+
+        s.
+          empty().
+          append(genOptions(i === 0 ? _data : nodeAtLevel(i - 1).children)).
+          val(v);
+      });
+    }
 
     function nodeAtLevel(level) {
       var path = [];
