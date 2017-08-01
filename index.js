@@ -68,6 +68,10 @@
           return false;
         }
 
+        if (i >= 1 && nodeAtLevel(i - 1).children.length === 0) {
+          return false;
+        }
+
         s.
           empty().
           append(genOptions(i === 0 ? _data : nodeAtLevel(i - 1).children)).
