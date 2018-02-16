@@ -11,10 +11,13 @@
   'use strict';
 
   $.fn.cascadingSelect = function(options) {
+    var defaults = {
+      placeholder: false
+    };
     var settings = $.extend({
-    }, options);
+    }, defaults, options);
 
-    var _data = normalizeData(settings.data);
+    var _data = normalizeData(settings);
 
     _data.nodeAtLevel = nodeAtLevel;
 
@@ -35,12 +38,18 @@
       var curLevel = _selects.indexOf(e.target);
       var curNode = _data.nodeAtLevel(curLevel);
       var nextSelect = _selects.slice(curLevel + 1)[0];
+      var entries;
 
       // console.log('curNode', curNode);
+      if (curNode && curNode.children && curNode.children.length) {
+        entries = curNode.children;
+      } else {
+        entries = [{text: settings.placeholder ? settings.placeholder : '', value: ''}];
+      }
 
       $(nextSelect).
         empty().
-        append(genOptions(curNode.children)).
+        append(genOptions(entries)).
         change();
     });
 
@@ -94,11 +103,11 @@
     }
   }
 
-  function normalizeData(data) {
-    return normalizeChildren(data);
+  function normalizeData(settings) {
+    return normalizeChildren(settings.data);
 
     function normalizeChildren(children) {
-      return children.map(function(c) {
+      var normalizedData = children.map(function(c) {
         if (typeof c === 'object') {
           return $.extend(
             { value: c.text }, c,
@@ -109,6 +118,10 @@
           return { text: text, value: text, children: [] };
         }
       });
+      if (settings.placeholder) {
+        normalizedData.unshift({text: '-- Normalized --', value: 'x', children: []});
+      }
+      return normalizedData;
     }
   }
 
