@@ -43,8 +43,10 @@
       // console.log('curNode', curNode);
       if (curNode && curNode.children && curNode.children.length) {
         entries = curNode.children;
+      } else if (settings.placeholder) {
+        entries = [{text: settings.placeholder, value: ''}];
       } else {
-        entries = [{text: settings.placeholder ? settings.placeholder : '', value: ''}];
+        entries = [];
       }
 
       $(nextSelect).
@@ -119,7 +121,7 @@
         }
       });
       if (settings.placeholder) {
-        normalizedData.unshift({text: '-- Normalized --', value: 'x', children: []});
+        normalizedData.unshift({text: settings.placeholder, value: '', children: []});
       }
       return normalizedData;
     }
