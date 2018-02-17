@@ -33,6 +33,7 @@ $('level 1 select').cascadingSelect(options)
 |-------------|----------|---------|------------------------------------------------------------|
 | subSelects | string array | | jQuery selectors for sub selects  |
 | data | node array | | model of option tree |
+| placeholder | string | false | text of default option prepended to every select |
 
 #### Node format
 
