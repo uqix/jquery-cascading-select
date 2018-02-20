@@ -33,6 +33,8 @@ $('level 1 select').cascadingSelect(options)
 |-------------|----------|---------|------------------------------------------------------------|
 | subSelects | string array | | jQuery selectors for sub selects  |
 | data | node array | | model of option tree |
+| placeholder | string | false | text to show when no option selected |
+| placeholderWhenEmpty | string | false | text to show when no option available |
 
 #### Node format
 

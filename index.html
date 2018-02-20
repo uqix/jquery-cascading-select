@@ -72,11 +72,13 @@
            text: '3.3',
            children: ['3.3.1', '3.3.2', '3.3.3']
          }]
-       }];
+       }, '4'];
 
        $('#s1').cascadingSelect({
          subSelects: ['#s2', '#s3'],
-         data: data
+         data: data,
+         placeholder: '-- Choose --',
+         placeholderWhenEmpty: '-'
        });
 
        $('#s4').cascadingSelect({
