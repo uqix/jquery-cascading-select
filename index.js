@@ -12,7 +12,8 @@
 
   $.fn.cascadingSelect = function(options) {
     var defaults = {
-      placeholder: false
+      placeholder: false,
+      placeholderWhenEmpty: false
     };
     var settings = $.extend({
     }, defaults, options);
@@ -43,8 +44,8 @@
       // console.log('curNode', curNode);
       if (curNode && curNode.children && curNode.children.length) {
         entries = curNode.children;
-      } else if (settings.placeholder) {
-        entries = [{text: settings.placeholder, value: ''}];
+      } else if (settings.placeholderWhenEmpty) {
+        entries = [{text: settings.placeholderWhenEmpty, value: ''}];
       } else {
         entries = [];
       }
