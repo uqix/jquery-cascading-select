@@ -101,7 +101,9 @@
 
     function nodeAtPath(path) {
       return path.reduce(function(n, i) {
-        return n.children[i];
+        if (typeof n !== 'undefined') {
+          return n.children[i];
+        }
       }, { children: _data });
     }
   }
