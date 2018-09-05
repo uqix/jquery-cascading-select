@@ -1,6 +1,6 @@
 {
   "name": "jquery-cascading-select",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Unlimited level cascading select",
   "main": "index.js",
   "dependencies": {
