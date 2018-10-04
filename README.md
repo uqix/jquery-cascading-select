@@ -2,7 +2,7 @@
 
 [![npm version](https://img.shields.io/npm/v/jquery-cascading-select.svg)](https://www.npmjs.com/package/jquery-cascading-select)
 [![npm downloads](https://img.shields.io/npm/dt/jquery-cascading-select.svg)](https://www.npmjs.com/package/jquery-cascading-select)
-[![David](https://david-dm.org/zenkiezhu/jquery-cascading-select.svg)](https://david-dm.org/zenkiezhu/jquery-cascading-select)
+[![David](https://david-dm.org/uqix/jquery-cascading-select.svg)](https://david-dm.org/uqix/jquery-cascading-select)
 
 Unlimited level cascading select
 
@@ -18,7 +18,7 @@ Unlimited level cascading select
 
 ## Usage
 
-See [demo](https://zenkiezhu.github.io/jquery-cascading-select/)
+See [demo](https://uqix.github.io/jquery-cascading-select/)
 
 
 ## API
