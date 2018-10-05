@@ -76,17 +76,24 @@
         var s = $(this);
         var v = s.val();
 
-        if (v === null) {
-          return false;
-        }
+        var entries;
 
-        if (i >= 1 && nodeAtLevel(i - 1).children.length === 0) {
-          return false;
+        if (i === 0) {
+            entries = _data;
+        } else {
+            var curNode = nodeAtLevel(i - 1);
+            if (curNode && curNode.children && curNode.children.length) {
+                entries = curNode.children;
+            } else if (settings.placeholderWhenEmpty) {
+                entries = [{text: settings.placeholderWhenEmpty, value: ''}];
+            } else {
+                entries = [];
+            }
         }
 
         s.
           empty().
-          append(genOptions(i === 0 ? _data : nodeAtLevel(i - 1).children)).
+          append(genOptions(entries)).
           val(v);
       });
     }
